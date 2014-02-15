@@ -65,23 +65,22 @@ function drupal_company_update_7001() {
 
   $results = $query->execute();
 
-  if (empty($results['node'])) {
-    return;
-  }
-  $nodes = node_load_multiple(array_keys($results['node']));
+  if (!empty($results['node'])) {
+    $nodes = node_load_multiple(array_keys($results['node']));
 
-  foreach ($nodes as $node) {
-    $wrapper = entity_metadata_wrapper('node', $node);
+    foreach ($nodes as $node) {
+      $wrapper = entity_metadata_wrapper('node', $node);
 
-    $old_field = $wrapper->field_contact_person_phone_numbe->value();
+      $old_field = $wrapper->field_contact_person_phone_numbe->value();
 
-    if (empty($old_field)) {
-      continue;
+      if (empty($old_field)) {
+        continue;
+      }
+      foreach ($old_field as $delta => $value) {
+        $wrapper->field_contact_phone_number[$delta]->set($value);
+      }
+      $wrapper->save();
     }
-    foreach ($old_field as $delta => $value) {
-      $wrapper->field_contact_phone_number[$delta]->set($value);
-    }
-    $wrapper->save();
   }
   field_delete_field('field_contact_person_phone_numbe');
 }
