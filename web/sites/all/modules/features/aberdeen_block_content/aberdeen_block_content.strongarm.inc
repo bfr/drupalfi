@@ -14,7 +14,7 @@ function aberdeen_block_content_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'drupalfi_aberdeen_block_content';
-  $strongarm->value = '<div>Hosting sponsored by:</div>
+  $strongarm->value = '<div>Palvelintilan tarjoaa:</div>
 <a href="http://www.aberdeencloud.com/"><img src="/sites/all/modules/custom/drupalfi_aberdeen_block/images/aberdeencloud.png" /></a>';
   $export['drupalfi_aberdeen_block_content'] = $strongarm;
 
