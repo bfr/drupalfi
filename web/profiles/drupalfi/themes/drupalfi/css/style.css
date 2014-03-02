@@ -99,6 +99,25 @@ ul, ol {
   margin-left: 0;
   padding-left: 0; }
 
+/* Forms */
+.form-submit {
+  border: none;
+  background: #2aa9df;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px; }
+
+input[type="text"] {
+  padding: 1px 5px; }
+
+label {
+  font-weight: 500; }
+
 /* Table styles. */
 table {
   width: 99%; }
