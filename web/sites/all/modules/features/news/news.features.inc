@@ -29,11 +29,11 @@ function news_views_api($module = NULL, $api = NULL) {
 function news_node_info() {
   $items = array(
     'news' => array(
-      'name' => t('News'),
+      'name' => t('Uutiset'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Otsikko'),
       'help' => '',
     ),
   );

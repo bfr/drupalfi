@@ -62,39 +62,6 @@ function news_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'easy_social_news_count';
-  $strongarm->value = '1';
-  $export['easy_social_news_count'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'easy_social_news_enable';
-  $strongarm->value = 1;
-  $export['easy_social_news_enable'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'easy_social_news_type';
-  $strongarm->value = '1';
-  $export['easy_social_news_type'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'easy_social_news_widgets';
-  $strongarm->value = array(
-    'twitter' => 'twitter',
-    'facebook' => 'facebook',
-    'googleplus' => 'googleplus',
-    'linkedin' => 'linkedin',
-  );
-  $export['easy_social_news_widgets'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_news';
   $strongarm->value = array(
     0 => 'main-menu',
