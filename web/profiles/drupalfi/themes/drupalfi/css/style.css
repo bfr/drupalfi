@@ -40,12 +40,14 @@ a:hover, a:active {
       font-size: 2em;
       line-height: 3em; } }
 
-@media screen and (max-width: 1200px) {
-  #logo {
-    margin: 0 20px; } }
-@media screen and (max-width: 768px) {
-  #logo {
-    text-align: center; } }
+#logo {
+  width: 250px; }
+  @media screen and (max-width: 1200px) {
+    #logo {
+      margin: 0 20px; } }
+  @media screen and (max-width: 768px) {
+    #logo {
+      text-align: center; } }
 
 #header {
   margin: 30px auto; }
