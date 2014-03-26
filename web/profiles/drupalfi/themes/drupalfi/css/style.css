@@ -41,7 +41,7 @@ a:hover, a:active {
       line-height: 3em; } }
 
 #logo {
-  width: 250px; }
+  width: 350px; }
   @media screen and (max-width: 1200px) {
     #logo {
       margin: 0 20px; } }
