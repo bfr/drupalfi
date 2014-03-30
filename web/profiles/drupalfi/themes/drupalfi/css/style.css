@@ -235,6 +235,8 @@ div.status {
   padding: 50px 0;
   color: white;
   font-size: 14px; }
+  #content-bottom a, #content-bottom a.active {
+    color: #2aa9df; }
   #content-bottom h2 {
     color: white;
     font-size: 1.14em;
