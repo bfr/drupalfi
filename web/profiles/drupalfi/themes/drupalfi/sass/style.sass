@@ -210,6 +210,11 @@ div.status
     color: $white
   #secondary
     font-size: 0.7em
+  @include media($tablet)
+    li 
+      width: 100%
+      text-align: center
+      padding: 0.3em 0
 
 #content-bottom
   background: url('../images/footer.jpg') repeat-x center center fixed
