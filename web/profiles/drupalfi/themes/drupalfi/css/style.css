@@ -252,6 +252,9 @@ a#collapsed-menu-button {
     padding: 0;
     width: 100%; }
 
+#mobile-navigation-mask {
+  opacity: 0; }
+
 #content-bottom {
   background: url("../images/footer.jpg") repeat-x center center fixed;
   background-size: cover;
