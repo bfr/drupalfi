@@ -84,7 +84,7 @@ function simple_mobile_navigation_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mobile_navigation_useMask';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['mobile_navigation_useMask'] = $strongarm;
 
   $strongarm = new stdClass();
