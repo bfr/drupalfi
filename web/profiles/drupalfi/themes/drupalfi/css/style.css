@@ -226,6 +226,35 @@ div.status {
   #navigation #secondary {
     font-size: 0.7em; }
 
+a#collapsed-menu-button {
+  color: #2aa9df;
+  width: 10em;
+  text-align: center;
+  display: block;
+  margin: 1em auto;
+  background: white url(../images/menu-icon.png) no-repeat 50px 16px;
+  padding-left: 30px; }
+
+#mobile-menu-inner {
+  width: 100%; }
+
+#mobile-menu {
+  background: #2aa9df; }
+  #mobile-menu li {
+    width: 100%;
+    text-align: center;
+    border: 0;
+    padding: 0.5em 0; }
+    #mobile-menu li:first-child {
+      border-top: 0; }
+  #mobile-menu li > a {
+    color: white;
+    padding: 0;
+    width: 100%; }
+
+#mobile-navigation-mask {
+  opacity: 0; }
+
 #content-bottom {
   background: url("../images/footer.jpg") repeat-x center center fixed;
   background-size: cover;
