@@ -119,21 +119,6 @@ function event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Kenttä: Sisältö: Date */
-  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['label'] = '';
-  $handler->display->display_options['fields']['field_event_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_event_date']['alter']['text'] = '<p><strong>Tapahtuma-aika:</strong> [field_event_date]</p>';
-  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Kenttä: Sisältö: event_body */
   $handler->display->display_options['fields']['field_event_body']['id'] = 'field_event_body';
   $handler->display->display_options['fields']['field_event_body']['table'] = 'field_data_field_event_body';
@@ -143,6 +128,36 @@ function event_views_default_views() {
   $handler->display->display_options['fields']['field_event_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_body']['settings'] = array(
     'trim_length' => '600',
+  );
+  /* Kenttä: Sisältö: Date */
+  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['label'] = '';
+  $handler->display->display_options['fields']['field_event_date']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_event_date']['alter']['text'] = '<p><strong>Aika:</strong> [field_event_date]</p>';
+  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Kenttä: Sisältö: Address */
+  $handler->display->display_options['fields']['field_event_address']['id'] = 'field_event_address';
+  $handler->display->display_options['fields']['field_event_address']['table'] = 'field_data_field_event_address';
+  $handler->display->display_options['fields']['field_event_address']['field'] = 'field_event_address';
+  $handler->display->display_options['fields']['field_event_address']['label'] = '';
+  $handler->display->display_options['fields']['field_event_address']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_event_address']['alter']['text'] = '<p><strong>Paikka: </strong>[field_event_address-thoroughfare], [field_event_address-premise], [field_event_address-postal_code] [field_event_address-locality], [field_event_address-country]</p>';
+  $handler->display->display_options['fields']['field_event_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_address']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_event_address']['settings'] = array(
+    'use_widget_handlers' => 1,
+    'format_handlers' => array(
+      'address' => 'address',
+    ),
   );
   $handler->display->display_options['path'] = 'tapahtumat';
   $handler->display->display_options['menu']['type'] = 'normal';
@@ -162,7 +177,8 @@ function event_views_default_views() {
     t('Block'),
     t('Sivu'),
     t('[title] [field_event_date_1]'),
-    t('<p><strong>Tapahtuma-aika:</strong> [field_event_date]</p>'),
+    t('<p><strong>Aika:</strong> [field_event_date]</p>'),
+    t('<p><strong>Paikka: </strong>[field_event_address-thoroughfare], [field_event_address-premise], [field_event_address-postal_code] [field_event_address-locality], [field_event_address-country]</p>'),
   );
   $export['events'] = $view;
 
