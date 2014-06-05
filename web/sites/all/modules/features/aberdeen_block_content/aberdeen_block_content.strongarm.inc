@@ -15,7 +15,7 @@ function aberdeen_block_content_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'drupalfi_aberdeen_block_content';
   $strongarm->value = '<div>Palvelintilan tarjoaa:</div>
-<a href="http://www.aberdeencloud.com/"><img src="/sites/all/modules/custom/drupalfi_aberdeen_block/images/aberdeencloud.png" /></a>';
+<a href="http://www.aberdeencloud.com/"><img style="max-width: 150px" src="/sites/all/modules/custom/drupalfi_aberdeen_block/images/aberdeencloud.png" /></a>';
   $export['drupalfi_aberdeen_block_content'] = $strongarm;
 
   $strongarm = new stdClass();
