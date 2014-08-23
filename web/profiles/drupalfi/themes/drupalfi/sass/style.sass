@@ -36,6 +36,7 @@ a
     line-height: 3em
 
 #logo
+  width: 350px
   @include media($desktop)
     margin: 0 20px
   @include media($tablet)
@@ -92,6 +93,20 @@ img
 ul, ol
   margin-left: 0
   padding-left: 0
+
+/* Forms
+.form-submit
+  border: none
+  background: $blue
+  padding: 5px 10px
+  color: $white
+  @include border-radius(3px, 3px)
+
+input[type="text"]
+  padding: 1px 5px
+
+label
+  font-weight: 500
 
 /* Table styles.
 table
@@ -195,6 +210,40 @@ div.status
     color: $white
   #secondary
     font-size: 0.7em
+  @include media($tablet)
+    li 
+      width: 100%
+      text-align: center
+      padding: 0.3em 0
+
+a#collapsed-menu-button
+  color: $blue
+  width: 10em
+  text-align: center
+  display: block
+  margin: 1em auto
+  background: white url(../images/menu-icon.png) no-repeat 50px 16px
+  padding-left: 30px
+
+#mobile-menu-inner
+  width: 100%
+
+#mobile-menu
+  background: $blue
+  li
+    width: 100%
+    text-align: center
+    border: 0
+    padding: 0.5em 0
+    &:first-child
+      border-top: 0
+  li > a 
+    color: $white
+    padding: 0
+    width: 100%
+
+#mobile-navigation-mask
+  opacity: 0
 
 #content-bottom
   background: url('../images/footer.jpg') repeat-x center center fixed
@@ -205,6 +254,8 @@ div.status
   padding: 50px 0
   color: $white
   font-size: 14px
+  a, a.active
+    color: $blue
   h2
     color: $white
     font-size: 1.14em
@@ -235,10 +286,14 @@ div.status
       padding: 0
     li
       list-style: none
-      margin: 0
+      margin: 0 0 10px
     .views-field-created,
     .views-field-field-event-date
       font-size: 0.8em
+
+.easy_social_box
+  margin: 10px 0
+  height: auto
 
 #main
   margin: 20px 0
@@ -252,12 +307,8 @@ div.status
 
 #footer
   width: 100%
-  max-width: 1200px
   font-size: 0.7em
-  .footer-left
-    text-align: center
-  .footer-right
-    float: right
+  text-align: center
 
 /* Frontpage view
 .view-frontpage-view .views-row

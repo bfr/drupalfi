@@ -17,9 +17,9 @@ function event_context_default_contexts() {
   $context->description = '';
   $context->tag = '';
   $context->conditions = array(
-    'path' => array(
+    'sitewide' => array(
       'values' => array(
-        '<front>' => '<front>',
+        1 => 1,
       ),
     ),
   );

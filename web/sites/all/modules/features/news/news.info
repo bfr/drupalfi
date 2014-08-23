@@ -5,6 +5,7 @@ package = drupalfi
 dependencies[] = context
 dependencies[] = drupalfi_date_formats
 dependencies[] = features
+dependencies[] = node
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = views
