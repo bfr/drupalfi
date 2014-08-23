@@ -50,7 +50,13 @@ function drupal_company_field_default_field_instances() {
         'available_countries' => array(
           'FI' => 'FI',
         ),
-        'format_handlers' => array(),
+        'format_handlers' => array(
+          'address' => 'address',
+          'address-hide-country' => 0,
+          'organisation' => 0,
+          'name-full' => 0,
+          'name-oneline' => 0,
+        ),
       ),
       'type' => 'addressfield_standard',
       'weight' => 1,
