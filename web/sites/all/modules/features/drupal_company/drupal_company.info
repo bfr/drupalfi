@@ -43,6 +43,7 @@ features[variable][] = easy_social_company_count
 features[variable][] = easy_social_company_enable
 features[variable][] = easy_social_company_type
 features[variable][] = easy_social_company_widgets
+features[variable][] = language_content_type_company
 features[variable][] = menu_options_company
 features[variable][] = menu_parent_company
 features[variable][] = node_options_company
