@@ -10,8 +10,8 @@
 function basic_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-basic_page-field_basic_page_body'
-  $field_instances['node-basic_page-field_basic_page_body'] = array(
+  // Exported field_instance: 'node-basic_page-field_bsic_page_body'
+  $field_instances['node-basic_page-field_bsic_page_body'] = array(
     'bundle' => 'basic_page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -32,7 +32,7 @@ function basic_page_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_basic_page_body',
+    'field_name' => 'field_bsic_page_body',
     'label' => 'Basic page body',
     'required' => 0,
     'settings' => array(
@@ -46,7 +46,7 @@ function basic_page_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => -4,
+      'weight' => 1,
     ),
   );
 
