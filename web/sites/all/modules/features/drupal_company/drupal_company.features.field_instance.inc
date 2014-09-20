@@ -342,7 +342,7 @@ function drupal_company_field_default_field_instances() {
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '',
+      'max_resolution' => '160x160',
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
