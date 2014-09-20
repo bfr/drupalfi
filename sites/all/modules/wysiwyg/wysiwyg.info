@@ -1,0 +1,13 @@
+name = Wysiwyg
+description = Feature for wysiwyg
+core = 7.x
+package = drupalfi
+dependencies[] = ckeditor
+dependencies[] = features
+dependencies[] = filter
+features[ckeditor_profile][] = Advanced
+features[ckeditor_profile][] = CKEditor Global Profile
+features[ckeditor_profile][] = Full
+features[features_api][] = api:2
+features[filter][] = wysiwyg_profile
+features[user_permission][] = use text format wysiwyg_profile
