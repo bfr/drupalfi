@@ -40,4 +40,3 @@ features[user_permission][] = view revisions
 features[user_permission][] = view the administration theme
 features[user_role][] = Administrator
 features[user_role][] = Content creator
-project path = sites/all/modules/features

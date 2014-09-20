@@ -10,13 +10,13 @@
 function basic_page_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_basic_page_body'
-  $field_bases['field_basic_page_body'] = array(
+  // Exported field_base: 'field_bsic_page_body'
+  $field_bases['field_bsic_page_body'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_basic_page_body',
+    'field_name' => 'field_bsic_page_body',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(

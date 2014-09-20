@@ -63,6 +63,50 @@ function drupal_company_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-company-field_company_description'
+  $field_instances['node-company-field_company_description'] = array(
+    'bundle' => 'company',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Kirjoita yleisesittely yrityksestäsi',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_company_description',
+    'label' => 'Company description',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-company-field_company_email'
   $field_instances['node-company-field_company_email'] = array(
     'bundle' => 'company',
@@ -98,7 +142,7 @@ function drupal_company_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -261,7 +305,7 @@ function drupal_company_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 9,
     ),
   );
 
@@ -298,7 +342,7 @@ function drupal_company_field_default_field_instances() {
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '',
+      'max_resolution' => '160x160',
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
@@ -311,7 +355,7 @@ function drupal_company_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -352,10 +396,10 @@ function drupal_company_field_default_field_instances() {
       'active' => 1,
       'module' => 'url',
       'settings' => array(
-        'size' => 120,
+        'size' => 90,
       ),
       'type' => 'url_external',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -363,6 +407,7 @@ function drupal_company_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Address');
   t('Company Email');
+  t('Company description');
   t('Contact person email');
   t('Contact person name');
   t('Contact person phone number');
