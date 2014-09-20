@@ -21,7 +21,7 @@ function drupal_company_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_company';
-  $strongarm->value = '2';
+  $strongarm->value = '0';
   $export['comment_company'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -42,21 +42,21 @@ function drupal_company_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_company';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_form_location_company'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_company';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_company'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_company';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_subject_field_company'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -70,7 +70,7 @@ function drupal_company_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'easy_social_company_enable';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['easy_social_company_enable'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -97,7 +97,23 @@ function drupal_company_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__company';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
@@ -110,7 +126,14 @@ function drupal_company_strongarm() {
           'weight' => '10',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'easy_social_1' => array(
+          'default' => array(
+            'weight' => '9',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__company'] = $strongarm;
@@ -159,7 +182,7 @@ function drupal_company_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_company';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_company'] = $strongarm;
 
   return $export;
