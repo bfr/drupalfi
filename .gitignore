@@ -1,20 +1,9 @@
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
 
-*.png
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
 
-*.css
-
-*.gif
-
-*.info
-
-*.install
-
-*.module
-
-*.inc
-
-*.js
-
-*.txt
-
-*.php
+.DS_Store
+.idea/
