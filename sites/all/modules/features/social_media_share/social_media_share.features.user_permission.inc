@@ -13,14 +13,18 @@ function social_media_share_user_default_permissions() {
   // Exported permission: 'administer easy social'.
   $permissions['administer easy social'] = array(
     'name' => 'administer easy social',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'easy_social',
   );
 
   // Exported permission: 'use easy social wizard'.
   $permissions['use easy social wizard'] = array(
     'name' => 'use easy social wizard',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'easy_social',
   );
 

@@ -138,7 +138,9 @@ function user_roles_and_permissions_user_default_permissions() {
   // Exported permission: 'block IP addresses'.
   $permissions['block IP addresses'] = array(
     'name' => 'block IP addresses',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'system',
   );
 
@@ -180,7 +182,9 @@ function user_roles_and_permissions_user_default_permissions() {
   // Exported permission: 'display drupal links'.
   $permissions['display drupal links'] = array(
     'name' => 'display drupal links',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'admin_menu',
   );
 
@@ -212,21 +216,29 @@ function user_roles_and_permissions_user_default_permissions() {
   // Exported permission: 'select account cancellation method'.
   $permissions['select account cancellation method'] = array(
     'name' => 'select account cancellation method',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'user',
   );
 
   // Exported permission: 'view own unpublished content'.
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'Content creator' => 'Content creator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'view revisions'.
   $permissions['view revisions'] = array(
     'name' => 'view revisions',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'Content creator' => 'Content creator',
+    ),
     'module' => 'node',
   );
 

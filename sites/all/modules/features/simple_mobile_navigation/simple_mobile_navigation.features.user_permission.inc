@@ -13,7 +13,9 @@ function simple_mobile_navigation_user_default_permissions() {
   // Exported permission: 'administer mobile navigation'.
   $permissions['administer mobile navigation'] = array(
     'name' => 'administer mobile navigation',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'mobile_navigation',
   );
 
