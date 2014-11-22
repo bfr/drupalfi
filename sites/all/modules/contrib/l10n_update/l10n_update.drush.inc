@@ -16,13 +16,13 @@ function l10n_update_drush_command() {
   $commands['l10n-update-status'] = array(
     'description' => 'Show translation status of available projects.',
     'options' => array(
-      'languages' => 'Comma separated list of languages. Defaults to all available languages. Example: --langauges="nl, fr, de"',
+      'languages' => 'Comma separated list of languages. Defaults to all available languages. Example: --languages="nl, fr, de"',
     )
   );
   $commands['l10n-update'] = array(
     'description' => 'Update translations.',
     'options' => array(
-      'languages' => 'Comma separated list of languages. Defaults to all available languages. Example: --langauges="nl, fr, de"',
+      'languages' => 'Comma separated list of languages. Defaults to all available languages. Example: --languages="nl, fr, de"',
       'mode' => 'Determine if existing translations are overwitten during import. Use "overwrite" to overwrite any existing translation, "replace" to replace previously imported translations but not overwrite edited strings, "keep" to keep any existing translation and only add new translations. Default value: "keep"'
     ),
   );
@@ -52,7 +52,7 @@ function drush_l10n_update_refresh() {
  * Validate command l10n-update-status.
  */
 function drush_l10n_update_status_validate() {
-  _drush_l10n_update_validate_languages();
+  return _drush_l10n_update_validate_languages();
 }
 
 /**
@@ -100,7 +100,7 @@ function drush_l10n_update_status() {
     drush_print_table($table, TRUE);
   }
   else {
-    drush_log(dt('No languages to update.'), 'ok');
+    drush_log(dt('No languages to update.'), 'warning');
   }
 }
 
@@ -108,8 +108,10 @@ function drush_l10n_update_status() {
  * Validate command l10n-update.
  */
 function drush_l10n_update_validate() {
-  _drush_l10n_update_validate_languages();
-
+  $lang_validation = _drush_l10n_update_validate_languages();
+  if ($lang_validation == FALSE) {
+    return FALSE;
+  }
   // Check provided update mode is valid.
   $mode = drush_get_option('mode', 'keep');
   if (!in_array($mode, array('keep', 'replace', 'overwrite'))) {
@@ -180,9 +182,13 @@ function drush_l10n_update() {
 function _drush_l10n_update_validate_languages() {
   // Check if there are installed languages other than english.
   $installed_languages = l10n_update_translatable_language_list();
+
+  // Indicate that there's nothing to do, only show a warning.
   if (empty($installed_languages)) {
-    return drush_set_error('L10N_UPDATE_NO_LANGUAGES', dt('No languages to update.'));
+    drush_log(dt('No languages to update.'), 'warning');
+    return FALSE;
   }
+
   // Check provided languages are valid.
   $languages = drush_get_option('languages', '');
   $languages = array_map('trim', _convert_csv_to_array($languages));
@@ -203,12 +209,14 @@ function _drush_l10n_update_validate_languages() {
     }
     if (drush_get_error() != DRUSH_SUCCESS) {
       drush_print(dt('Available languages: @languages', array('@languages' => implode(', ', array_keys($installed_languages)))));
+      return FALSE;
     }
   }
   else {
     $languages = $installed_languages;
   }
   drush_set_option('languages', $languages);
+  return TRUE;
 }
 
 /**
@@ -240,6 +248,6 @@ function _drush_l10n_update_get_updates() {
     return $updates;
   }
   else {
-    drush_log(dt('No languages to update.'), 'ok');
+    drush_log(dt('No languages to update.'), 'warning');
   }
 }
