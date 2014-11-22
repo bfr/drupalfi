@@ -6,7 +6,7 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
   <?php print $styles; ?>
   <?php print $scripts; ?>
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes; ?>>
   <div id="skip">
