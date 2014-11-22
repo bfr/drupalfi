@@ -10,6 +10,33 @@
 function wysiwyg_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer ckeditor'.
+  $permissions['administer ckeditor'] = array(
+    'name' => 'administer ckeditor',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'ckeditor',
+  );
+
+  // Exported permission: 'administer imce'.
+  $permissions['administer imce'] = array(
+    'name' => 'administer imce',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'imce',
+  );
+
+  // Exported permission: 'customize ckeditor'.
+  $permissions['customize ckeditor'] = array(
+    'name' => 'customize ckeditor',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'ckeditor',
+  );
+
   // Exported permission: 'use text format wysiwyg_profile'.
   $permissions['use text format wysiwyg_profile'] = array(
     'name' => 'use text format wysiwyg_profile',
