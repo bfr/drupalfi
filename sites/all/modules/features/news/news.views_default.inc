@@ -24,13 +24,17 @@ function news_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Uutiset';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'lisää';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Käytä';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Lajittele';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Kenttä: Sisältö: Otsikko */
@@ -40,26 +44,26 @@ function news_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Kenttä: Sisältö: Post date */
+  /* Kenttä: Sisältö: Lähetetty */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'drupalfi_date_formats_date_only';
-  /* Sort criterion: Sisältö: Post date */
+  /* Lajittelukriteeri: Sisältö: Lähetetty */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Sisältö: Julkaistu */
+  /* Suodatinkriteeri: Sisältö: Julkaistu */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Sisältö: Tyyppi */
+  /* Suodatinkriteeri: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -71,21 +75,21 @@ function news_views_default_views() {
   $handler = $view->new_display('block', 'Uutiset block', 'block');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Sisältö: Julkaistu */
+  /* Suodatinkriteeri: Sisältö: Julkaistu */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Sisältö: Tyyppi */
+  /* Suodatinkriteeri: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filter criterion: Sisältö: News tags (field_news_tags) */
+  /* Suodatinkriteeri: Sisältö: News tags (field_news_tags) */
   $handler->display->display_options['filters']['field_news_tags_tid']['id'] = 'field_news_tags_tid';
   $handler->display->display_options['filters']['field_news_tags_tid']['table'] = 'field_data_field_news_tags';
   $handler->display->display_options['filters']['field_news_tags_tid']['field'] = 'field_news_tags_tid';
@@ -113,6 +117,8 @@ function news_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Merkintöjä sivua kohti';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Kaikki -';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« ensimmäinen';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ edellinen';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'seuraava ›';
@@ -133,7 +139,7 @@ function news_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Kenttä: Sisältö: Post date */
+  /* Kenttä: Sisältö: Lähetetty */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -165,6 +171,8 @@ function news_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Merkintöjä sivua kohti';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Kaikki -';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« ensimmäinen';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ edellinen';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'seuraava ›';
@@ -185,7 +193,7 @@ function news_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Kenttä: Sisältö: Post date */
+  /* Kenttä: Sisältö: Lähetetty */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -200,21 +208,21 @@ function news_views_default_views() {
   $handler->display->display_options['fields']['field_news_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Sisältö: Julkaistu */
+  /* Suodatinkriteeri: Sisältö: Julkaistu */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Sisältö: Tyyppi */
+  /* Suodatinkriteeri: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filter criterion: Sisältö: News tags (field_news_tags) */
+  /* Suodatinkriteeri: Sisältö: News tags (field_news_tags) */
   $handler->display->display_options['filters']['field_news_tags_tid']['id'] = 'field_news_tags_tid';
   $handler->display->display_options['filters']['field_news_tags_tid']['table'] = 'field_data_field_news_tags';
   $handler->display->display_options['filters']['field_news_tags_tid']['field'] = 'field_news_tags_tid';
@@ -237,17 +245,17 @@ function news_views_default_views() {
   $translatables['news'] = array(
     t('Master'),
     t('Uutiset'),
-    t('more'),
-    t('Apply'),
+    t('lisää'),
+    t('Käytä'),
     t('Palauta oletusarvoihin'),
-    t('Sort by'),
+    t('Lajittele'),
     t('Asc'),
     t('Desc'),
     t('Uutiset block'),
     t('News tags (field_news_tags)'),
     t('Uutiset page'),
-    t('Items per page'),
-    t('- All -'),
+    t('Merkintöjä sivua kohti'),
+    t('- Kaikki -'),
     t('Offset'),
     t('« ensimmäinen'),
     t('‹ edellinen'),
